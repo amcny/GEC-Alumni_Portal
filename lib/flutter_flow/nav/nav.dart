@@ -40,6 +40,31 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'onboarding',
           path: '/onboarding',
           builder: (context, params) => const OnboardingWidget(),
+        ),
+        FFRoute(
+          name: 'homepage',
+          path: '/homepage',
+          builder: (context, params) => const HomepageWidget(),
+        ),
+        FFRoute(
+          name: 'leaderboard',
+          path: '/leaderboard',
+          builder: (context, params) => const LeaderboardWidget(),
+        ),
+        FFRoute(
+          name: 'donation',
+          path: '/donation',
+          builder: (context, params) => const DonationWidget(),
+        ),
+        FFRoute(
+          name: 'profile',
+          path: '/profile',
+          builder: (context, params) => const ProfileWidget(),
+        ),
+        FFRoute(
+          name: 'jobportal',
+          path: '/jobportal',
+          builder: (context, params) => const JobportalWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

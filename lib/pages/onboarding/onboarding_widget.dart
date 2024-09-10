@@ -79,7 +79,7 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
                                 .override(
-                                  fontFamily: 'Noto Sans',
+                                  fontFamily: 'Inter',
                                   letterSpacing: 0.0,
                                   lineHeight: 1.4,
                                 ),
