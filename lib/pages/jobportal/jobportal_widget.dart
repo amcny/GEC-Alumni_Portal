@@ -464,7 +464,7 @@ class _JobportalWidgetState extends State<JobportalWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Graphic Designer',
+                                        'Software Engineer',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -758,7 +758,7 @@ class _JobportalWidgetState extends State<JobportalWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'Graphic Designer',
+                                        'Project Lead',
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(

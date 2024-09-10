@@ -1,5 +1,4 @@
 import '/flutter_flow/flutter_flow_drop_down.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -48,20 +47,6 @@ class _DonationWidgetState extends State<DonationWidget> {
         appBar: AppBar(
           backgroundColor: Colors.transparent,
           automaticallyImplyLeading: false,
-          leading: FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: const Icon(
-              Icons.arrow_back_rounded,
-              color: Colors.white,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              context.pop();
-            },
-          ),
           title: Text(
             'Donation',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
@@ -69,7 +54,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                   color: Colors.white,
                   fontSize: 22.0,
                   letterSpacing: 0.5,
-                  fontWeight: FontWeight.w300,
+                  fontWeight: FontWeight.w500,
                 ),
           ),
           actions: const [],
@@ -171,6 +156,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                     ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
+                          color: Colors.white,
                           fontSize: 20.0,
                           letterSpacing: 0.0,
                         ),
@@ -188,12 +174,14 @@ class _DonationWidgetState extends State<DonationWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          'For - ${_model.dropDownValue} | Amount: ${_model.textController.text} Paid',
+                          ' Paid | For - ${_model.dropDownValue}| Amount: ${_model.textController.text}',
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     fontFamily: 'Inter',
                                     color: Colors.white,
+                                    fontSize: 15.0,
                                     letterSpacing: 0.0,
+                                    fontWeight: FontWeight.normal,
                                   ),
                         ),
                         duration: const Duration(milliseconds: 4000),

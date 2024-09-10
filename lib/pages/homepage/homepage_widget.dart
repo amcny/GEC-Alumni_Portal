@@ -46,61 +46,62 @@ class _HomepageWidgetState extends State<HomepageWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
-        appBar: AppBar(
-          backgroundColor: const Color(0xFF5324FD),
-          automaticallyImplyLeading: false,
-          actions: const [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: Padding(
-              padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(80.0),
+          child: AppBar(
+            backgroundColor: const Color(0xFF5324FD),
+            automaticallyImplyLeading: false,
+            actions: const [],
+            flexibleSpace: FlexibleSpaceBar(
+              title: Column(
+                mainAxisSize: MainAxisSize.min,
                 mainAxisAlignment: MainAxisAlignment.end,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Text(
-                          'Hello Simon 👋',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: Colors.white,
-                                    fontSize: 20.0,
-                                    letterSpacing: 0.5,
-                                    fontWeight: FontWeight.normal,
-                                  ),
-                        ),
-                        Flexible(
-                          child: Align(
-                            alignment: const AlignmentDirectional(2.3, 0.0),
-                            child: InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                await showDialog(
-                                  context: context,
-                                  builder: (alertDialogContext) {
-                                    return AlertDialog(
-                                      title: const Text('Hey, Daily Check-In'),
-                                      content: const Text('Your streak : 17 🔥 '),
-                                      actions: [
-                                        TextButton(
-                                          onPressed: () =>
-                                              Navigator.pop(alertDialogContext),
-                                          child: const Text('Okay'),
-                                        ),
-                                      ],
-                                    );
-                                  },
-                                );
-                              },
+                    child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                      onTap: () async {
+                        await showDialog(
+                          context: context,
+                          builder: (alertDialogContext) {
+                            return AlertDialog(
+                              title: const Text('Hey, Daily Check-In'),
+                              content: const Text('Your streak : 17 🔥 '),
+                              actions: [
+                                TextButton(
+                                  onPressed: () =>
+                                      Navigator.pop(alertDialogContext),
+                                  child: const Text('Okay'),
+                                ),
+                              ],
+                            );
+                          },
+                        );
+                      },
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          Text(
+                            'Hello Simon 👋',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color: Colors.white,
+                                  fontSize: 20.0,
+                                  letterSpacing: 0.5,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                          ),
+                          Flexible(
+                            child: Align(
+                              alignment: const AlignmentDirectional(2.3, 0.0),
                               child: Container(
                                 width: MediaQuery.sizeOf(context).width * 0.08,
                                 height: MediaQuery.sizeOf(context).width * 0.08,
@@ -115,34 +116,34 @@ class _HomepageWidgetState extends State<HomepageWidget>
                               ),
                             ),
                           ),
-                        ),
-                        Flexible(
-                          child: Align(
-                            alignment: const AlignmentDirectional(0.8, 0.0),
-                            child: Container(
-                              width: MediaQuery.sizeOf(context).width * 0.08,
-                              height: MediaQuery.sizeOf(context).width * 0.08,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.asset(
-                                'assets/images/Ellipse_121.png',
-                                fit: BoxFit.cover,
+                          Flexible(
+                            child: Align(
+                              alignment: const AlignmentDirectional(0.8, 0.0),
+                              child: Container(
+                                width: MediaQuery.sizeOf(context).width * 0.08,
+                                height: MediaQuery.sizeOf(context).width * 0.08,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: const BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Image.asset(
+                                  'assets/images/Ellipse_121.png',
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
+              centerTitle: true,
+              expandedTitleScale: 1.0,
             ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
+            elevation: 2.0,
           ),
-          elevation: 2.0,
         ),
         body: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
@@ -202,7 +203,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
                             child: Container(
-                              height: 328.0,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF2B2B2B),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -321,7 +321,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 12.0, 0.0, 0.0),
+                                          10.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -358,7 +358,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
                             child: Container(
-                              height: 328.0,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF2B2B2B),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -477,7 +476,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 12.0, 0.0, 0.0),
+                                          10.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -514,7 +513,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
                             child: Container(
-                              height: 328.0,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF2B2B2B),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -633,7 +631,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 12.0, 0.0, 0.0),
+                                          10.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -670,7 +668,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
                             child: Container(
-                              height: 328.0,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF2B2B2B),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -789,7 +786,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 12.0, 0.0, 0.0),
+                                          10.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -826,7 +823,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
                             child: Container(
-                              height: 328.0,
                               decoration: BoxDecoration(
                                 color: const Color(0xFF2B2B2B),
                                 borderRadius: BorderRadius.circular(15.0),
@@ -945,7 +941,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                     alignment: const AlignmentDirectional(-1.0, 0.0),
                                     child: Padding(
                                       padding: const EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 12.0, 0.0, 0.0),
+                                          10.0, 12.0, 0.0, 12.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.min,
                                         children: [
@@ -1279,7 +1275,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        70.0, 0.0, 0.0, 0.0),
+                                                        60.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '19/03/2024',
                                                   textAlign: TextAlign.start,
@@ -1599,7 +1595,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        70.0, 0.0, 0.0, 0.0),
+                                                        60.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '22/03/2024',
                                                   textAlign: TextAlign.start,
@@ -1919,7 +1915,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        70.0, 0.0, 0.0, 0.0),
+                                                        60.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '27/03/2024',
                                                   textAlign: TextAlign.start,

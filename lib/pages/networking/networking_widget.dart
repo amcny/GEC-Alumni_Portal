@@ -2,6 +2,7 @@ import '/flutter_flow/flutter_flow_button_tabbar.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'networking_model.dart';
 export 'networking_model.dart';
@@ -46,6 +47,23 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          title: Text(
+            'Networking',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w500,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
         body: SafeArea(
           top: true,
           child: Padding(
@@ -110,7 +128,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                   crossAxisCount: 2,
                                   crossAxisSpacing: 10.0,
                                   mainAxisSpacing: 20.0,
-                                  childAspectRatio: 0.7,
+                                  childAspectRatio: 0.6,
                                 ),
                                 scrollDirection: Axis.vertical,
                                 children: [
@@ -160,6 +178,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                     0.0, 22.0, 0.0, 0.0),
                                             child: Text(
                                               'Emily nelson',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -181,8 +200,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
                                                       0.0, 10.0, 0.0, 0.0),
-                                              child: Text(
+                                              child: AutoSizeText(
                                                 'Product Manager at Netflix',
+                                                maxLines: 1,
                                                 style:
                                                     FlutterFlowTheme.of(context)
                                                         .bodyMedium
@@ -236,7 +256,11 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                           .override(
                                                             fontFamily: 'Inter',
                                                             color: Colors.white,
+                                                            fontSize: 15.0,
                                                             letterSpacing: 0.0,
+                                                            fontWeight:
+                                                                FontWeight
+                                                                    .normal,
                                                           ),
                                                     ),
                                                     duration: const Duration(
@@ -316,6 +340,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
                                             'Devon Lane',
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -336,8 +361,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Product Manager at Netflix',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -389,7 +415,10 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color: Colors.white,
+                                                          fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -466,6 +495,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
                                             'Ronald',
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -486,8 +516,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Product Manager at Netflix',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -539,7 +570,10 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color: Colors.white,
+                                                          fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -616,6 +650,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
                                             'Eleanor',
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -636,8 +671,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Product Manager at Netflix',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -689,7 +725,10 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color: Colors.white,
+                                                          fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -765,7 +804,8 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
-                                            'Wade Warren',
+                                            'Wade',
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -786,8 +826,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Product Manager at Netflix',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -839,7 +880,10 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color: Colors.white,
+                                                          fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
                                                   duration: const Duration(
@@ -915,7 +959,8 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
-                                            'Savannah',
+                                            'Svvannah',
+                                            maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -936,8 +981,9 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 10.0, 0.0, 0.0),
-                                            child: Text(
+                                            child: AutoSizeText(
                                               'Product Manager at Netflix',
+                                              maxLines: 1,
                                               style: FlutterFlowTheme.of(
                                                       context)
                                                   .bodyMedium
@@ -989,7 +1035,10 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                                         .override(
                                                           fontFamily: 'Inter',
                                                           color: Colors.white,
+                                                          fontSize: 15.0,
                                                           letterSpacing: 0.0,
+                                                          fontWeight:
+                                                              FontWeight.normal,
                                                         ),
                                                   ),
                                                   duration: const Duration(
