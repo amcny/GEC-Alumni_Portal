@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '/index.dart';
+import '/main.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 
 export 'package:go_router/go_router.dart';
@@ -29,12 +30,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       initialLocation: '/',
       debugLogDiagnostics: true,
       refreshListenable: appStateNotifier,
-      errorBuilder: (context, state) => const OnboardingWidget(),
+      errorBuilder: (context, state) => const NavBarPage(),
       routes: [
         FFRoute(
           name: '_initialize',
           path: '/',
-          builder: (context, _) => const OnboardingWidget(),
+          builder: (context, _) => const NavBarPage(),
         ),
         FFRoute(
           name: 'onboarding',
@@ -44,17 +45,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'homepage',
           path: '/homepage',
-          builder: (context, params) => const HomepageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'homepage')
+              : const HomepageWidget(),
         ),
         FFRoute(
           name: 'leaderboard',
           path: '/leaderboard',
-          builder: (context, params) => const LeaderboardWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'leaderboard')
+              : const LeaderboardWidget(),
         ),
         FFRoute(
           name: 'donation',
           path: '/donation',
-          builder: (context, params) => const DonationWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'donation')
+              : const DonationWidget(),
         ),
         FFRoute(
           name: 'profile',
@@ -64,7 +71,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'jobportal',
           path: '/jobportal',
-          builder: (context, params) => const JobportalWidget(),
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'jobportal')
+              : const JobportalWidget(),
+        ),
+        FFRoute(
+          name: 'networking',
+          path: '/networking',
+          builder: (context, params) => params.isEmpty
+              ? const NavBarPage(initialPage: 'networking')
+              : const NetworkingWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -1,6 +1,9 @@
+import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:flutter/material.dart';
 import 'donation_model.dart';
 export 'donation_model.dart';
@@ -21,6 +24,11 @@ class _DonationWidgetState extends State<DonationWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => DonationModel());
+
+    _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -37,204 +45,166 @@ class _DonationWidgetState extends State<DonationWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'Donation',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w300,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
         body: SafeArea(
           top: true,
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: [
-                    Text(
-                      'Hello Kabira 👋',
-                      style: FlutterFlowTheme.of(context).bodyMedium.override(
-                            fontFamily: 'Inter',
-                            color: Colors.white,
-                            fontSize: 20.0,
-                            letterSpacing: 0.5,
-                            fontWeight: FontWeight.normal,
-                          ),
-                    ),
-                    Flexible(
-                      child: Align(
-                        alignment: const AlignmentDirectional(0.8, 0.0),
-                        child: Container(
-                          width: MediaQuery.sizeOf(context).width * 0.08,
-                          height: MediaQuery.sizeOf(context).width * 0.08,
-                          clipBehavior: Clip.antiAlias,
-                          decoration: const BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: Image.asset(
-                            'assets/images/Ellipse_121.png',
-                            fit: BoxFit.cover,
-                          ),
-                        ),
-                      ),
-                    ),
+                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 20.0, 26.0, 0.0),
+                child: FlutterFlowDropDown<String>(
+                  controller: _model.dropDownValueController ??=
+                      FormFieldController<String>(null),
+                  options: const [
+                    'Scholorship Fund',
+                    'Institute Development',
+                    'Others'
                   ],
+                  onChanged: (val) =>
+                      safeSetState(() => _model.dropDownValue = val),
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: 54.0,
+                  textStyle: FlutterFlowTheme.of(context).bodyMedium.override(
+                        fontFamily: 'Inter',
+                        color: Colors.white,
+                        letterSpacing: 0.0,
+                      ),
+                  hintText: 'Purpose of donation',
+                  icon: const Icon(
+                    Icons.keyboard_arrow_down_rounded,
+                    color: Colors.white,
+                    size: 24.0,
+                  ),
+                  fillColor: const Color(0xFF2B2B2B),
+                  elevation: 2.0,
+                  borderColor: Colors.transparent,
+                  borderWidth: 0.0,
+                  borderRadius: 12.0,
+                  margin: const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 12.0, 0.0),
+                  hidesUnderline: true,
+                  isOverButton: false,
+                  isSearchable: false,
+                  isMultiSelect: false,
                 ),
               ),
-              Align(
-                alignment: const AlignmentDirectional(-1.0, 0.0),
-                child: Padding(
-                  padding: const EdgeInsetsDirectional.fromSTEB(16.0, 28.0, 0.0, 0.0),
-                  child: Text(
-                    'Donation',
-                    textAlign: TextAlign.start,
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(26.0, 20.0, 26.0, 0.0),
+                child: SizedBox(
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  child: TextFormField(
+                    controller: _model.textController,
+                    focusNode: _model.textFieldFocusNode,
+                    autofocus: false,
+                    obscureText: false,
+                    decoration: InputDecoration(
+                      isDense: false,
+                      hintText: 'Enter Amount',
+                      hintStyle:
+                          FlutterFlowTheme.of(context).labelMedium.override(
+                                fontFamily: 'Inter',
+                                color: Colors.white,
+                                fontSize: 14.0,
+                                letterSpacing: 0.5,
+                                fontWeight: FontWeight.w300,
+                              ),
+                      enabledBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Color(0xFF676767),
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      focusedBorder: OutlineInputBorder(
+                        borderSide: const BorderSide(
+                          color: Color(0x00000000),
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      errorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      focusedErrorBorder: OutlineInputBorder(
+                        borderSide: BorderSide(
+                          color: FlutterFlowTheme.of(context).error,
+                          width: 1.0,
+                        ),
+                        borderRadius: BorderRadius.circular(12.0),
+                      ),
+                      filled: true,
+                      fillColor: const Color(0xFF2B2B2B),
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Inter',
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          fontSize: 24.0,
+                          fontSize: 20.0,
                           letterSpacing: 0.0,
                         ),
+                    textAlign: TextAlign.start,
+                    maxLines: null,
+                    validator:
+                        _model.textControllerValidator.asValidator(context),
                   ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: 300.0,
-                      height: 51.0,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF2B2B2B),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Icon(
-                              Icons.search,
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              size: 24.0,
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Purpose of donation',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 5.0, 0.0),
-                      child: Container(
-                        width: 46.0,
-                        height: 51.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF2B2B2B),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Icon(
-                          Icons.keyboard_arrow_down_outlined,
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          size: 35.0,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Container(
-                      width: 300.0,
-                      height: 51.0,
-                      decoration: BoxDecoration(
-                        color: const Color(0xFF2B2B2B),
-                        borderRadius: BorderRadius.circular(10.0),
-                      ),
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        children: [
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                12.0, 0.0, 0.0, 0.0),
-                            child: Container(
-                              width: 20.0,
-                              height: 20.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: const BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.asset(
-                                'assets/images/gridicons_money.png',
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                10.0, 0.0, 0.0, 0.0),
-                            child: Text(
-                              'Amount',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 5.0, 0.0),
-                      child: Container(
-                        width: 46.0,
-                        height: 51.0,
-                        decoration: BoxDecoration(
-                          color: const Color(0xFF2B2B2B),
-                          borderRadius: BorderRadius.circular(10.0),
-                        ),
-                        child: Icon(
-                          Icons.keyboard_arrow_down_outlined,
-                          color: FlutterFlowTheme.of(context).primaryBackground,
-                          size: 35.0,
-                        ),
-                      ),
-                    ),
-                  ],
                 ),
               ),
               Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
                 child: FFButtonWidget(
-                  onPressed: () {
-                    print('Button pressed ...');
+                  onPressed: () async {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text(
+                          'For - ${_model.dropDownValue} | Amount: ${_model.textController.text} Paid',
+                          style:
+                              FlutterFlowTheme.of(context).titleLarge.override(
+                                    fontFamily: 'Inter',
+                                    color: Colors.white,
+                                    letterSpacing: 0.0,
+                                  ),
+                        ),
+                        duration: const Duration(milliseconds: 4000),
+                        backgroundColor: const Color(0xFF2B2B2B),
+                      ),
+                    );
                   },
                   text: 'Pay',
                   options: FFButtonOptions(
-                    width: 100.0,
-                    height: 40.0,
+                    width: 123.0,
+                    height: 49.0,
                     padding:
                         const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
                     iconPadding:
@@ -243,10 +213,11 @@ class _DonationWidgetState extends State<DonationWidget> {
                     textStyle: FlutterFlowTheme.of(context).labelLarge.override(
                           fontFamily: 'Inter',
                           color: FlutterFlowTheme.of(context).primaryBackground,
+                          fontSize: 22.0,
                           letterSpacing: 0.0,
                         ),
                     elevation: 0.0,
-                    borderRadius: BorderRadius.circular(10.0),
+                    borderRadius: BorderRadius.circular(15.0),
                   ),
                 ),
               ),

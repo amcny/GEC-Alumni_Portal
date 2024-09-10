@@ -1,3 +1,4 @@
+import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -21,6 +22,8 @@ class _ProfileWidgetState extends State<ProfileWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => ProfileModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
@@ -37,160 +40,165 @@ class _ProfileWidgetState extends State<ProfileWidget> {
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
-        body: SafeArea(
-          top: true,
+        appBar: AppBar(
+          backgroundColor: Colors.transparent,
+          automaticallyImplyLeading: false,
+          leading: FlutterFlowIconButton(
+            borderColor: Colors.transparent,
+            borderRadius: 30.0,
+            borderWidth: 1.0,
+            buttonSize: 60.0,
+            icon: const Icon(
+              Icons.arrow_back_rounded,
+              color: Colors.white,
+              size: 30.0,
+            ),
+            onPressed: () async {
+              context.pop();
+            },
+          ),
+          title: Text(
+            'Profile',
+            style: FlutterFlowTheme.of(context).headlineMedium.override(
+                  fontFamily: 'Inter',
+                  color: Colors.white,
+                  fontSize: 22.0,
+                  letterSpacing: 0.5,
+                  fontWeight: FontWeight.w300,
+                ),
+          ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
+        ),
+        body: SingleChildScrollView(
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
               Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
-                child: Row(
-                  mainAxisSize: MainAxisSize.max,
-                  children: [
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
-                      child: Icon(
-                        Icons.arrow_back_ios_new,
-                        color: FlutterFlowTheme.of(context).primaryBackground,
-                        size: 18.0,
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          const EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 0.0, 0.0),
-                      child: Text(
-                        'Profile',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Inter',
-                              color: FlutterFlowTheme.of(context)
-                                  .primaryBackground,
-                              fontSize: 16.0,
-                              letterSpacing: 0.0,
-                            ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Padding(
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 20.0, 16.0, 0.0),
-                child: Container(
-                  width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 214.0,
-                  decoration: BoxDecoration(
-                    color: const Color(0xFF2B2B2B),
-                    borderRadius: BorderRadius.circular(20.0),
-                  ),
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Align(
-                        alignment: const AlignmentDirectional(-1.0, 0.0),
-                        child: Padding(
-                          padding: const EdgeInsets.all(10.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(20.0),
+                  child: Container(
+                    width: MediaQuery.sizeOf(context).width * 1.0,
+                    height: 272.0,
+                    decoration: BoxDecoration(
+                      color: const Color(0xFF2B2B2B),
+                      borderRadius: BorderRadius.circular(20.0),
+                    ),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              10.0, 12.0, 0.0, 12.0),
                           child: ClipRRect(
-                            borderRadius: BorderRadius.circular(8.0),
+                            borderRadius: BorderRadius.circular(24.0),
                             child: Image.asset(
                               'assets/images/Mask_Group.png',
-                              width: 124.0,
-                              height: 169.0,
-                              fit: BoxFit.cover,
+                              width: 164.0,
+                              height: 257.0,
+                              fit: BoxFit.fill,
                             ),
                           ),
                         ),
-                      ),
-                      Column(
-                        mainAxisSize: MainAxisSize.max,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
+                        Flexible(
+                          child: Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 24.0, 0.0, 0.0),
-                            child: Text(
-                              'Emily\nNelson',
-                              textAlign: TextAlign.start,
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    fontSize: 30.0,
-                                    letterSpacing: 0.0,
+                                0.0, 0.0, 16.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 24.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Emily\nNelson',
+                                    textAlign: TextAlign.start,
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: 30.0,
+                                          letterSpacing: 0.0,
+                                        ),
                                   ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                5.0, 10.0, 0.0, 0.0),
-                            child: Text(
-                              'Product Manager at Netflix',
-                              style: FlutterFlowTheme.of(context)
-                                  .labelLarge
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    fontSize: 14.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                5.0, 8.0, 0.0, 0.0),
-                            child: Text(
-                              'SVIT  \'22',
-                              style: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Inter',
-                                    color: FlutterFlowTheme.of(context)
-                                        .primaryBackground,
-                                    fontSize: 16.0,
-                                    letterSpacing: 0.0,
-                                  ),
-                            ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsetsDirectional.fromSTEB(
-                                0.0, 15.0, 0.0, 0.0),
-                            child: FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
-                              },
-                              text: 'Book a session',
-                              icon: const Icon(
-                                Icons.open_in_new,
-                                size: 15.0,
-                              ),
-                              options: FFButtonOptions(
-                                width: 149.0,
-                                height: 36.0,
-                                padding: const EdgeInsetsDirectional.fromSTEB(
-                                    16.0, 0.0, 16.0, 0.0),
-                                iconPadding: const EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: const Color(0xFF5324FD),
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleSmall
-                                    .override(
-                                      fontFamily: 'Inter',
-                                      color: Colors.white,
-                                      letterSpacing: 0.0,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: const BorderSide(
-                                  color: Color(0xFF4E4E4E),
                                 ),
-                                borderRadius: BorderRadius.circular(50.0),
-                              ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 10.0, 0.0, 0.0),
+                                  child: Text(
+                                    'Product Manager at Netflix',
+                                    style: FlutterFlowTheme.of(context)
+                                        .labelLarge
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: 12.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      5.0, 8.0, 0.0, 0.0),
+                                  child: Text(
+                                    'SVIT  \'22',
+                                    style: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Inter',
+                                          color: FlutterFlowTheme.of(context)
+                                              .primaryBackground,
+                                          fontSize: 13.0,
+                                          letterSpacing: 0.0,
+                                        ),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 15.0, 0.0, 0.0),
+                                  child: FFButtonWidget(
+                                    onPressed: () {
+                                      print('Button pressed ...');
+                                    },
+                                    text: 'Book a session',
+                                    icon: const Icon(
+                                      Icons.open_in_new,
+                                      size: 15.0,
+                                    ),
+                                    options: FFButtonOptions(
+                                      width: 149.0,
+                                      height: 36.0,
+                                      padding: const EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 0.0, 16.0, 0.0),
+                                      iconPadding: const EdgeInsets.all(0.0),
+                                      color: const Color(0xFF5324FD),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Inter',
+                                            color: Colors.white,
+                                            letterSpacing: 0.0,
+                                          ),
+                                      elevation: 0.0,
+                                      borderSide: const BorderSide(
+                                        color: Color(0xFF4E4E4E),
+                                      ),
+                                      borderRadius: BorderRadius.circular(50.0),
+                                    ),
+                                  ),
+                                ),
+                              ],
                             ),
                           ),
-                        ],
-                      ),
-                    ],
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -310,7 +318,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 110.0,
+                  height: 122.0,
                   decoration: BoxDecoration(
                     color: const Color(0xFF2B2B2B),
                     borderRadius: BorderRadius.circular(15.0),
@@ -322,16 +330,21 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                       mainAxisSize: MainAxisSize.max,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          'BIO',
-                          style:
-                              FlutterFlowTheme.of(context).bodyMedium.override(
-                                    fontFamily: 'Inter',
-                                    color: const Color(0xFFD4D4D4),
-                                    fontSize: 15.0,
-                                    letterSpacing: 0.0,
-                                    fontWeight: FontWeight.w500,
-                                  ),
+                        Padding(
+                          padding: const EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 10.0),
+                          child: Text(
+                            'BIO',
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Inter',
+                                  color: const Color(0xFFD4D4D4),
+                                  fontSize: 15.0,
+                                  letterSpacing: 0.0,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                          ),
                         ),
                         Text(
                           'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Tortor turpis sodales nulla velit. Nunc cum vitae, pulvinar pretium.',
@@ -352,7 +365,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                 padding: const EdgeInsetsDirectional.fromSTEB(16.0, 16.0, 16.0, 0.0),
                 child: Container(
                   width: MediaQuery.sizeOf(context).width * 1.0,
-                  height: 110.0,
+                  height: 105.0,
                   decoration: BoxDecoration(
                     color: const Color(0xFF2B2B2B),
                     borderRadius: BorderRadius.circular(15.0),
@@ -377,9 +390,9 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                         ),
                         Padding(
                           padding: const EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                              0.0, 14.0, 0.0, 0.0),
                           child: Row(
-                            mainAxisSize: MainAxisSize.max,
+                            mainAxisSize: MainAxisSize.min,
                             children: [
                               Padding(
                                 padding: const EdgeInsetsDirectional.fromSTEB(
@@ -554,7 +567,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                   ),
                 ),
               ),
-            ],
+            ].addToEnd(const SizedBox(height: 20.0)),
           ),
         ),
       ),

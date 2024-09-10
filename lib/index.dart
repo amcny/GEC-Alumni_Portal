@@ -5,3 +5,4 @@ export '/pages/leaderboard/leaderboard_widget.dart' show LeaderboardWidget;
 export '/pages/donation/donation_widget.dart' show DonationWidget;
 export '/pages/profile/profile_widget.dart' show ProfileWidget;
 export '/pages/jobportal/jobportal_widget.dart' show JobportalWidget;
+export '/pages/networking/networking_widget.dart' show NetworkingWidget;

@@ -1,8 +1,8 @@
 import '/flutter_flow/flutter_flow_util.dart';
-import 'homepage_widget.dart' show HomepageWidget;
+import 'networking_widget.dart' show NetworkingWidget;
 import 'package:flutter/material.dart';
 
-class HomepageModel extends FlutterFlowModel<HomepageWidget> {
+class NetworkingModel extends FlutterFlowModel<NetworkingWidget> {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for TabBar widget.
