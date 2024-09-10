@@ -199,7 +199,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                             child: Padding(
                                               padding: const EdgeInsetsDirectional
                                                   .fromSTEB(
-                                                      0.0, 10.0, 0.0, 0.0),
+                                                      12.0, 10.0, 0.0, 0.0),
                                               child: AutoSizeText(
                                                 'Product Manager at Netflix',
                                                 maxLines: 1,
@@ -360,7 +360,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 10.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Product Manager at Netflix',
                                               maxLines: 1,
@@ -515,7 +515,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 10.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Product Manager at Netflix',
                                               maxLines: 1,
@@ -670,7 +670,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 10.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Product Manager at Netflix',
                                               maxLines: 1,
@@ -825,7 +825,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 10.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Product Manager at Netflix',
                                               maxLines: 1,
@@ -980,7 +980,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                           child: Padding(
                                             padding:
                                                 const EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 10.0, 0.0, 0.0),
+                                                    12.0, 10.0, 0.0, 0.0),
                                             child: AutoSizeText(
                                               'Product Manager at Netflix',
                                               maxLines: 1,

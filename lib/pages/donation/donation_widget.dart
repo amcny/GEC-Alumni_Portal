@@ -174,7 +174,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          ' Paid | For - ${_model.dropDownValue}| Amount: ${_model.textController.text}',
+                          ' Paid | For - ${_model.dropDownValue} | Amount: ${_model.textController.text}',
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     fontFamily: 'Inter',
