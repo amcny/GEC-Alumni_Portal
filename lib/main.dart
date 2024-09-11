@@ -135,7 +135,7 @@ class _NavBarPageState extends State<NavBarPage> {
                   Icons.home,
                   color:
                       currentIndex == 0 ? const Color(0xFF8659F6) : const Color(0xFF919191),
-                  size: 26.0,
+                  size: 28.0,
                 ),
                 Text(
                   'Home',

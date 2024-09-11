@@ -125,7 +125,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                               ),
                       enabledBorder: OutlineInputBorder(
                         borderSide: const BorderSide(
-                          color: Color(0xFF676767),
+                          color: Color(0x00000000),
                           width: 1.0,
                         ),
                         borderRadius: BorderRadius.circular(12.0),
@@ -174,7 +174,7 @@ class _DonationWidgetState extends State<DonationWidget> {
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
                         content: Text(
-                          ' Paid | For - ${_model.dropDownValue} | Amount: ${_model.textController.text}',
+                          ' Paid For - ${_model.dropDownValue} | Amount: ${_model.textController.text}',
                           style:
                               FlutterFlowTheme.of(context).titleLarge.override(
                                     fontFamily: 'Inter',

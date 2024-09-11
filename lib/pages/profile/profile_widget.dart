@@ -166,7 +166,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                     onPressed: () {
                                       print('Button pressed ...');
                                     },
-                                    text: 'Book a session',
+                                    text: 'Book session',
                                     icon: const Icon(
                                       Icons.open_in_new,
                                       size: 15.0,
@@ -242,14 +242,14 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                 padding: const EdgeInsetsDirectional.fromSTEB(
                                     0.0, 0.0, 0.0, 5.0),
                                 child: Text(
-                                  'Session \ncomplted',
+                                  'Sessions\ncompleted',
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Roboto',
                                         color: const Color(0xFF9FADB8),
-                                        fontSize: 16.0,
+                                        fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -301,7 +301,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                                       .override(
                                         fontFamily: 'Roboto',
                                         color: const Color(0xFF9FADB8),
-                                        fontSize: 16.0,
+                                        fontSize: 14.0,
                                         letterSpacing: 0.0,
                                       ),
                                 ),
@@ -347,7 +347,7 @@ class _ProfileWidgetState extends State<ProfileWidget> {
                           ),
                         ),
                         Text(
-                          'Lorem ipsum dolor sit amet, consectetur adipi scing elit. Tortor turpis sodales nulla velit. Nunc cum vitae, pulvinar pretium.',
+                          'A product manager is a professional role which is responsible for the development of products for an organization',
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
                                     fontFamily: 'Inter',

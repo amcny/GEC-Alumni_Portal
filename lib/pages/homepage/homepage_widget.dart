@@ -46,104 +46,95 @@ class _HomepageWidgetState extends State<HomepageWidget>
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: Colors.black,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(80.0),
-          child: AppBar(
-            backgroundColor: const Color(0xFF5324FD),
-            automaticallyImplyLeading: false,
-            actions: const [],
-            flexibleSpace: FlexibleSpaceBar(
-              title: Column(
-                mainAxisSize: MainAxisSize.min,
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        const EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 8.0),
-                    child: InkWell(
-                      splashColor: Colors.transparent,
-                      focusColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      highlightColor: Colors.transparent,
-                      onTap: () async {
-                        await showDialog(
-                          context: context,
-                          builder: (alertDialogContext) {
-                            return AlertDialog(
-                              title: const Text('Hey, Daily Check-In'),
-                              content: const Text('Your streak : 17 🔥 '),
-                              actions: [
-                                TextButton(
-                                  onPressed: () =>
-                                      Navigator.pop(alertDialogContext),
-                                  child: const Text('Okay'),
-                                ),
-                              ],
-                            );
-                          },
+        appBar: AppBar(
+          backgroundColor: const Color(0xFF5324FD),
+          automaticallyImplyLeading: false,
+          title: Column(
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
+                child: InkWell(
+                  splashColor: Colors.transparent,
+                  focusColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  highlightColor: Colors.transparent,
+                  onTap: () async {
+                    await showDialog(
+                      context: context,
+                      builder: (alertDialogContext) {
+                        return AlertDialog(
+                          title: const Text('Hey, Daily Check-In'),
+                          content: const Text('Your streak : 17 🔥 '),
+                          actions: [
+                            TextButton(
+                              onPressed: () =>
+                                  Navigator.pop(alertDialogContext),
+                              child: const Text('Okay'),
+                            ),
+                          ],
                         );
                       },
-                      child: Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          Text(
-                            'Hello Simon 👋',
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Inter',
-                                  color: Colors.white,
-                                  fontSize: 20.0,
-                                  letterSpacing: 0.5,
-                                  fontWeight: FontWeight.normal,
-                                ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(2.3, 0.0),
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.08,
-                                height: MediaQuery.sizeOf(context).width * 0.08,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.asset(
-                                  'assets/images/shazam_icon.jpeg.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
+                    );
+                  },
+                  child: Row(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Text(
+                        'Hello Simon 👋',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Montserrat',
+                              color: Colors.white,
+                              fontSize: 20.0,
+                              letterSpacing: 0.5,
+                              fontWeight: FontWeight.normal,
                             ),
-                          ),
-                          Flexible(
-                            child: Align(
-                              alignment: const AlignmentDirectional(0.8, 0.0),
-                              child: Container(
-                                width: MediaQuery.sizeOf(context).width * 0.08,
-                                height: MediaQuery.sizeOf(context).width * 0.08,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: const BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.asset(
-                                  'assets/images/Ellipse_121.png',
-                                  fit: BoxFit.cover,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
                       ),
-                    ),
+                      Flexible(
+                        child: Align(
+                          alignment: const AlignmentDirectional(2.3, 0.0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.08,
+                            height: MediaQuery.sizeOf(context).width * 0.08,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/shazam_icon.jpeg.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Flexible(
+                        child: Align(
+                          alignment: const AlignmentDirectional(0.8, 0.0),
+                          child: Container(
+                            width: MediaQuery.sizeOf(context).width * 0.08,
+                            height: MediaQuery.sizeOf(context).width * 0.08,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: const BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.asset(
+                              'assets/images/Ellipse_121.png',
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
-              centerTitle: true,
-              expandedTitleScale: 1.0,
-            ),
-            elevation: 2.0,
+            ],
           ),
+          actions: const [],
+          centerTitle: false,
+          elevation: 2.0,
         ),
         body: Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(0.0, 16.0, 0.0, 0.0),
@@ -199,6 +190,98 @@ class _HomepageWidgetState extends State<HomepageWidget>
                       child: Column(
                         mainAxisSize: MainAxisSize.max,
                         children: [
+                          Align(
+                            alignment: const AlignmentDirectional(-1.0, 0.0),
+                            child: Padding(
+                              padding: const EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 16.0, 0.0),
+                              child: RichText(
+                                textScaler: MediaQuery.of(context).textScaler,
+                                text: TextSpan(
+                                  children: [
+                                    TextSpan(
+                                      text: 'SIH ID:  ',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: const Color(0xFF0085FF),
+                                            letterSpacing: 0.5,
+                                          ),
+                                    ),
+                                    TextSpan(
+                                      text: '1609 ( ALUMNI PORTAL )',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: Colors.white,
+                                            letterSpacing: 0.5,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                    ),
+                                    const TextSpan(
+                                      text: '\n',
+                                      style: TextStyle(),
+                                    ),
+                                    TextSpan(
+                                      text: 'TEAM NAME:  ',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: const Color(0xFF0085FF),
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    TextSpan(
+                                      text: 'GrOWTHx',
+                                      style: FlutterFlowTheme.of(context)
+                                          .labelLarge
+                                          .override(
+                                            fontFamily: 'brolink',
+                                            color: Colors.white,
+                                            fontSize: 17.0,
+                                            letterSpacing: 1.0,
+                                            useGoogleFonts: false,
+                                          ),
+                                    ),
+                                    const TextSpan(
+                                      text: '\n',
+                                      style: TextStyle(),
+                                    ),
+                                    TextSpan(
+                                      text: 'FACULTY MENTOR:  ',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            color: const Color(0xFF0085FF),
+                                            letterSpacing: 0.0,
+                                          ),
+                                    ),
+                                    TextSpan(
+                                      text: 'DR. ARUN KUMAR A',
+                                      style: FlutterFlowTheme.of(context)
+                                          .titleSmall
+                                          .override(
+                                            fontFamily: 'Montserrat',
+                                            letterSpacing: 0.5,
+                                          ),
+                                    )
+                                  ],
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Montserrat',
+                                        color: Colors.white,
+                                        letterSpacing: 0.0,
+                                        lineHeight: 2.0,
+                                      ),
+                                ),
+                              ),
+                            ),
+                          ),
                           Padding(
                             padding: const EdgeInsetsDirectional.fromSTEB(
                                 10.0, 18.0, 10.0, 0.0),
@@ -247,17 +330,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   letterSpacing: 0.8,
                                                   fontWeight: FontWeight.w300,
                                                 ),
-                                          ),
-                                        ),
-                                        const Flexible(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Icon(
-                                              Icons.favorite_border,
-                                              color: Color(0xFF5324FD),
-                                              size: 26.0,
-                                            ),
                                           ),
                                         ),
                                       ],
@@ -335,7 +407,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              '511',
+                                              '1.2K',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -402,17 +474,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   letterSpacing: 0.8,
                                                   fontWeight: FontWeight.w300,
                                                 ),
-                                          ),
-                                        ),
-                                        const Flexible(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Icon(
-                                              Icons.favorite_border,
-                                              color: Color(0xFF5324FD),
-                                              size: 26.0,
-                                            ),
                                           ),
                                         ),
                                       ],
@@ -490,7 +551,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              '511',
+                                              '338',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -557,17 +618,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   letterSpacing: 0.8,
                                                   fontWeight: FontWeight.w300,
                                                 ),
-                                          ),
-                                        ),
-                                        const Flexible(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Icon(
-                                              Icons.favorite_border,
-                                              color: Color(0xFF5324FD),
-                                              size: 26.0,
-                                            ),
                                           ),
                                         ),
                                       ],
@@ -645,7 +695,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              '511',
+                                              '171',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -712,17 +762,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   letterSpacing: 0.8,
                                                   fontWeight: FontWeight.w300,
                                                 ),
-                                          ),
-                                        ),
-                                        const Flexible(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Icon(
-                                              Icons.favorite_border,
-                                              color: Color(0xFF5324FD),
-                                              size: 26.0,
-                                            ),
                                           ),
                                         ),
                                       ],
@@ -800,7 +839,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              '511',
+                                              '633',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -867,17 +906,6 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                   letterSpacing: 0.8,
                                                   fontWeight: FontWeight.w300,
                                                 ),
-                                          ),
-                                        ),
-                                        const Flexible(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(1.0, 0.0),
-                                            child: Icon(
-                                              Icons.favorite_border,
-                                              color: Color(0xFF5324FD),
-                                              size: 26.0,
-                                            ),
                                           ),
                                         ),
                                       ],
@@ -955,7 +983,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                                 const EdgeInsetsDirectional.fromSTEB(
                                                     8.0, 0.0, 0.0, 0.0),
                                             child: Text(
-                                              '511',
+                                              '487',
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -1275,7 +1303,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        60.0, 0.0, 0.0, 0.0),
+                                                        55.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '19/03/2024',
                                                   textAlign: TextAlign.start,
@@ -1595,7 +1623,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        60.0, 0.0, 0.0, 0.0),
+                                                        55.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '22/03/2024',
                                                   textAlign: TextAlign.start,
@@ -1915,7 +1943,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                               Padding(
                                                 padding: const EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        60.0, 0.0, 0.0, 0.0),
+                                                        55.0, 0.0, 0.0, 0.0),
                                                 child: Text(
                                                   '27/03/2024',
                                                   textAlign: TextAlign.start,

@@ -959,7 +959,7 @@ class _NetworkingWidgetState extends State<NetworkingWidget>
                                               const EdgeInsetsDirectional.fromSTEB(
                                                   0.0, 22.0, 0.0, 0.0),
                                           child: Text(
-                                            'Svvannah',
+                                            'Savannah',
                                             maxLines: 1,
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium

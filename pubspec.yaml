@@ -90,6 +90,10 @@ flutter:
     - assets/lottie_animations/
     - assets/rive_animations/
     - assets/pdfs/
+  fonts:
+    - family: 'brolink'
+      fonts:
+        - asset: assets/fonts/Brolink_DEMO.otf
 
   
   # An image asset can refer to one or more resolution-specific "variants", see
