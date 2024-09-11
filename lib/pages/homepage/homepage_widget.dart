@@ -54,80 +54,76 @@ class _HomepageWidgetState extends State<HomepageWidget>
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Padding(
-                padding: const EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 8.0),
-                child: InkWell(
-                  splashColor: Colors.transparent,
-                  focusColor: Colors.transparent,
-                  hoverColor: Colors.transparent,
-                  highlightColor: Colors.transparent,
-                  onTap: () async {
-                    await showDialog(
-                      context: context,
-                      builder: (alertDialogContext) {
-                        return AlertDialog(
-                          title: const Text('Hey, Daily Check-In'),
-                          content: const Text('Your streak : 17 🔥 '),
-                          actions: [
-                            TextButton(
-                              onPressed: () =>
-                                  Navigator.pop(alertDialogContext),
-                              child: const Text('Okay'),
-                            ),
-                          ],
-                        );
-                      },
-                    );
-                  },
-                  child: Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Text(
-                        'Hello Simon 👋',
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 20.0,
-                              letterSpacing: 0.5,
-                              fontWeight: FontWeight.normal,
-                            ),
-                      ),
-                      Flexible(
-                        child: Align(
-                          alignment: const AlignmentDirectional(2.3, 0.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.08,
-                            height: MediaQuery.sizeOf(context).width * 0.08,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/shazam_icon.jpeg.png',
-                              fit: BoxFit.cover,
-                            ),
+              InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  await showDialog(
+                    context: context,
+                    builder: (alertDialogContext) {
+                      return AlertDialog(
+                        title: const Text('Hey, Daily Check-In'),
+                        content: const Text('Your streak : 17 🔥 '),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(alertDialogContext),
+                            child: const Text('Okay'),
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Row(
+                  mainAxisSize: MainAxisSize.max,
+                  children: [
+                    Text(
+                      'Hello Simon 👋',
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Montserrat',
+                            color: Colors.white,
+                            fontSize: 20.0,
+                            letterSpacing: 0.5,
+                            fontWeight: FontWeight.normal,
+                          ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(2.3, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.08,
+                          height: MediaQuery.sizeOf(context).width * 0.08,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(
+                            'assets/images/shazam_icon.jpeg.png',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                      Flexible(
-                        child: Align(
-                          alignment: const AlignmentDirectional(0.8, 0.0),
-                          child: Container(
-                            width: MediaQuery.sizeOf(context).width * 0.08,
-                            height: MediaQuery.sizeOf(context).width * 0.08,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: const BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.asset(
-                              'assets/images/Ellipse_121.png',
-                              fit: BoxFit.cover,
-                            ),
+                    ),
+                    Flexible(
+                      child: Align(
+                        alignment: const AlignmentDirectional(0.8, 0.0),
+                        child: Container(
+                          width: MediaQuery.sizeOf(context).width * 0.08,
+                          height: MediaQuery.sizeOf(context).width * 0.08,
+                          clipBehavior: Clip.antiAlias,
+                          decoration: const BoxDecoration(
+                            shape: BoxShape.circle,
+                          ),
+                          child: Image.asset(
+                            'assets/images/Ellipse_121.png',
+                            fit: BoxFit.cover,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -216,6 +212,7 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                           .override(
                                             fontFamily: 'Montserrat',
                                             color: Colors.white,
+                                            fontSize: 15.0,
                                             letterSpacing: 0.5,
                                             fontWeight: FontWeight.w600,
                                           ),
@@ -261,11 +258,12 @@ class _HomepageWidgetState extends State<HomepageWidget>
                                           ),
                                     ),
                                     TextSpan(
-                                      text: 'DR. ARUN KUMAR A',
+                                      text: 'DR. ARUN KUMAR',
                                       style: FlutterFlowTheme.of(context)
                                           .titleSmall
                                           .override(
                                             fontFamily: 'Montserrat',
+                                            fontSize: 15.0,
                                             letterSpacing: 0.5,
                                           ),
                                     )
